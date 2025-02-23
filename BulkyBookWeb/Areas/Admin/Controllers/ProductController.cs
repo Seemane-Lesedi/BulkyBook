@@ -117,7 +117,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
     [HttpGet]
     public IActionResult GetAll()
     {
-        var productList = _unitOfWork.Product.GetAll();
+        var productList = _unitOfWork.Product.GetAll(IncludeProperties: "Category,CoverType");
         return Json(new { data = productList });
 
     }
